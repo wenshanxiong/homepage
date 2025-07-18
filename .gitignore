@@ -1,0 +1,8 @@
+# Hugo
+/public/
+/resources/
+.hugo_build.lock
+
+# Tailwind & npm
+node_modules/
+package-lock.json
