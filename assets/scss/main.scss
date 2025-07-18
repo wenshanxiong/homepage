@@ -1,0 +1,86 @@
+/* Import custom variables first to override theme defaults */
+@import "variables";
+
+/* Import theme's main styles (this will use our custom variables) */
+@import "../../themes/hello-friend-ng/assets/scss/normalize";
+@import "../../themes/hello-friend-ng/assets/scss/prism";
+@import "../../themes/hello-friend-ng/assets/scss/flag-icons";
+@import "../../themes/hello-friend-ng/assets/scss/mixins";
+@import "../../themes/hello-friend-ng/assets/scss/fonts";
+@import "../../themes/hello-friend-ng/assets/scss/buttons";
+@import "../../themes/hello-friend-ng/assets/scss/header";
+@import "../../themes/hello-friend-ng/assets/scss/logo";
+@import "../../themes/hello-friend-ng/assets/scss/menu";
+@import "../../themes/hello-friend-ng/assets/scss/_main";
+@import "../../themes/hello-friend-ng/assets/scss/list";
+@import "../../themes/hello-friend-ng/assets/scss/single";
+@import "../../themes/hello-friend-ng/assets/scss/footer";
+@import "../../themes/hello-friend-ng/assets/scss/sharing-buttons";
+@import "../../themes/hello-friend-ng/assets/scss/tables";
+@import "../../themes/hello-friend-ng/assets/scss/404";
+
+/* Custom overrides for our color palette */
+
+/* Link styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  
+  &:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+  }
+}
+
+/* Ensure proper text colors in both light and dark themes */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+/* Accent elements */
+.accent,
+.highlight,
+.button-primary {
+  background-color: var(--accent-color);
+  color: white;
+  
+  &:hover {
+    background-color: darken($accent-color, 10%);
+  }
+}
+
+/* Menu and navigation link styling */
+.menu a {
+  color: var(--text-color);
+  
+  &:hover {
+    color: var(--link-color);
+  }
+}
+
+/* Post meta information */
+.post-meta {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Code blocks with custom accent */
+pre {
+  border-left: 3px solid var(--accent-color);
+}
+
+/* Tags */
+.tag {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-right: 0.5em;
+} 

@@ -10,7 +10,7 @@ theme        = "hello-friend-ng"
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "A simple and beautiful blog"
+  homeSubtitle = "I'm working on it"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -33,21 +33,28 @@ theme        = "hello-friend-ng"
 
 [languages]
   [languages.en]
-    title = "Hello Friend NG"
+    title = "Wenshan's homepage"
     keywords = ""
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
   [languages.en.params]
-    subtitle  = "A simple theme for Hugo"
-
     [languages.en.params.logo]
-      logoText = "hello friend ng"
+      logoText = "what's up"
       logoHomeLink = "/"
     # or
     #
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
+
+  # Social links
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/wenshanxiong"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/wenshanxiong"
 
   # And you can even create generic menu
   [[menu.main]]

@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* Custom Color Palette - Cooler colors (blue, grey, beige) with bright accent */
+
+// /* Light theme colors */
+$light-background: #1c2a3c;           /* Dark blue background */
+$light-background-secondary: #2e3a59; /* Secondary background */
+$light-background-header: #1a252f;    /* Header background */
+$light-color: #a9b8d4;               /* Light blue text */
+$light-color-variant: #f7f7f4;       /* Light beige for contrast */
+$light-color-secondary: #8a99b8;     /* Secondary text */
+$light-border-color: #3d4a5c;        /* Border color */
+$light-table-color: #3d4a5c;         /* Table color */
+
+/* Dark theme colors */
+$dark-background: #1c2a3c;           /* Dark blue background */
+$dark-background-secondary: #2e3a59; /* Secondary background */
+$dark-background-header: #1a252f;    /* Header background */
+$dark-color: #a9b8d4;               /* Light blue text */
+$dark-color-variant: #f7f7f4;       /* Light beige for contrast */
+$dark-color-secondary: #8a99b8;     /* Secondary text */
+$dark-border-color: #3d4a5c;        /* Border color */
+$dark-table-color: #3d4a5c;         /* Table color */
+
+/* Link colors */
+$light-link-color: #5dade2;         /* Sky blue links */
+$light-link-hover-color: #4682b4;   /* Steel blue on hover */
+$dark-link-color: #87ceeb;          /* Light sky blue for dark theme */
+$dark-link-hover-color: #5dade2;    /* Sky blue on hover */
+
+/* Accent color */
+$accent-color: #ff6b6b;             /* Bright coral red accent */
+
+/* Media queries */
+$media-size-phone: "(max-width: 684px)";
+$media-size-tablet: "(max-width: 900px)";
+
+/* Variables for js, must be the same as these in @custom-media queries */
+:root {
+  --phoneWidth: (max-width: 684px);
+  --tabletWidth: (max-width: 900px);
+  
+  /* Custom CSS variables for additional styling */
+  --background-color: #{$light-background};
+  --text-color: #{$light-color};
+  --heading-color: #{$light-color-variant};
+  --link-color: #{$light-link-color};
+  --link-hover-color: #{$light-link-hover-color};
+  --accent-color: #{$accent-color};
+}
+
+/* Dark theme CSS variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #{$dark-background};
+    --text-color: #{$dark-color};
+    --heading-color: #{$dark-color-variant};
+    --link-color: #{$dark-link-color};
+    --link-hover-color: #{$dark-link-hover-color};
+    --accent-color: #{$accent-color};
+  }
+}
+
+/* Content */
+$max-width: 860px; 
