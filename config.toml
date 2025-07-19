@@ -3,6 +3,11 @@ title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -58,6 +63,16 @@ theme        = "hello-friend-ng"
 
   # And you can even create generic menu
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+    identifier = "travel"
+    name       = "Travel"
+    url        = "/travel"
+
+  [[menu.main]]
+    identifier = "farming"
+    name       = "Farming"
+    url        = "/farming"
+
+  [[menu.main]]
+    identifier = "pets"
+    name       = "Pets"
+    url        = "/pets"
