@@ -4,23 +4,26 @@ date: 2024-01-01
 draft: false
 ---
 
-# My Travel Adventures
+# Where I've Been
 
-Explore the places I've been to around the world! Click on the pins to learn more about each destination.
+Explore the places I've been to around the world. Click on the pins to learn more about each destination.
 
-<div id="travel-map" style="height: 500px; width: 100%; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></div>
+<div id="travel-map" style="height: 400px; width: 67%; max-width: 600px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-// Initialize the map
-var map = L.map('travel-map').setView([20, 0], 2);
+// Initialize the map with continuous scrolling
+var map = L.map('travel-map', {
+    worldCopyJump: true,
+    minZoom: 1
+}).setView([0, 0], 1);
 
-// Add tile layer
+// Add tile layer with world wrapping enabled
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
-    maxZoom: 18,
+    maxZoom: 18
 }).addTo(map);
 
 // Define your travel destinations
@@ -29,13 +32,13 @@ var destinations = [
         name: "San Francisco, USA",
         lat: 37.7749,
         lng: -122.4194,
-        description: "The tech capital of the world! Loved the Golden Gate Bridge and Alcatraz.",
         visited: "2023"
     },
     {
         name: "Shenzhen, China",
         lat: 22.5429,
         lng: 114.0630,
+        description: "Ain't noting like home",
     },
     {
         name: "Hong Kong, China",
@@ -46,6 +49,26 @@ var destinations = [
         name: "Shanghai, China",
         lat: 31.2304,
         lng: 121.4737,
+    },
+    {
+        name: "Kunming, China",
+        lat: 25.0389,
+        lng: 102.7180,
+    },
+    {
+        name: "Xiamen, China",
+        lat: 24.4798,
+        lng: 118.0894,
+    },
+    {
+        name: "Guilin, China",
+        lat: 25.2742,
+        lng: 110.2902,
+    },
+    {
+        name: "Hengyang, China",
+        lat: 26.8968,
+        lng: 112.5857,
     },
     {
         name: "Chengdu, China",
@@ -68,6 +91,11 @@ var destinations = [
         lng: 112.9388,
     },
     {
+        name: "Nanjing, China",
+        lat: 32.0603,
+        lng: 118.7969,
+    },
+    {
         name: "Guangzhou, China",
         lat: 23.1291,
         lng: 113.2644,
@@ -78,9 +106,19 @@ var destinations = [
         lng: 139.6917,
     },
     {
-    name: "Maui, Hawaii, USA",
-    lat: 20.7984,
-    lng: -156.3319,
+        name: "Cebu City, Philippines",
+        lat: 10.3157,
+        lng: 123.8854,
+    },
+    {
+        name: "Bali, Indonesia",
+        lat: -8.4095,
+        lng: 115.1889,
+    },
+    {
+        name: "Maui, Hawaii, USA",
+        lat: 20.7984,
+        lng: -156.3319,
     },
     {
         name: "Anchorage, AK, USA",
@@ -136,11 +174,13 @@ var destinations = [
         name: "Zion National Park, UT, USA",
         lat: 37.2982,
         lng: -113.0263,
+        visited: "Mar 2023, May 2025"
     },
     {
         name: "Grand Canyon National Park, AZ, USA",
         lat: 36.1069,
         lng: -112.1129,
+        visited: "May 2025"
     },
     {
         name: "Yosemite National Park, CA, USA",
@@ -163,44 +203,85 @@ var destinations = [
         lng: -88.2434,
     },
     {
+        name: "Ann Arbor, Michigan, USA",
+        lat: 42.2808,
+        lng: -83.7430,
+    },
+    {
+        name: "Kewanna, Indiana, USA",
+        lat: 41.0653,
+        lng: -86.6219,
+    },
+    {
+        name: "Orlando, FL, USA",
+        lat: 28.5383,
+        lng: -81.3792,
+    },
+    {
+        name: "Washington, D.C., USA",
+        lat: 38.9072,
+        lng: -77.0369,
+    },
+    {
         name: "Brooklyn, NY, USA",
         lat: 40.6782,
         lng: -73.9442,
+    },
+    {
+        name: "San Juan, Puerto Rico, USA",
+        lat: 18.4655,
+        lng: -66.1057,
     }
 ];
 
-// Custom marker style
+// Custom marker style - precise circle marker
 var customIcon = L.divIcon({
     className: 'custom-marker',
-    html: '📍',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15]
+    html: '<div class="marker-dot"></div>',
+    iconSize: [12, 12],
+    iconAnchor: [6, 6]
 });
 
-// Add markers for each destination
+// Add markers for each destination at multiple world positions
 destinations.forEach(function(dest) {
-    var marker = L.marker([dest.lat, dest.lng], {icon: customIcon}).addTo(map);
-    
     var popupContent = `
         <div style="min-width: 200px;">
             <h3 style="margin: 0 0 10px 0; color: #2e3a59;">${dest.name}</h3>
-            <p style="margin: 0 0 8px 0; font-size: 14px;">${dest.description}</p>
-            <p style="margin: 0; font-size: 12px; color: #666; font-weight: bold;">Visited: ${dest.visited}</p>
+            ${dest.description ? `<p style="margin: 0 0 8px 0; font-size: 14px;">${dest.description}</p>` : ''}
+            ${dest.visited ? `<p style="margin: 0; font-size: 12px; color: #666; font-weight: bold;">Visited: ${dest.visited}</p>` : ''}
         </div>
     `;
     
-    marker.bindPopup(popupContent, {
-        maxWidth: 250,
-        className: 'custom-popup'
-    });
+    // Create markers at multiple world positions for continuous visibility
+    for (var i = -1; i <= 1; i++) {
+        var lng = dest.lng + (i * 360);
+        var marker = L.marker([dest.lat, lng], {icon: customIcon}).addTo(map);
+        marker.bindPopup(popupContent, {
+            maxWidth: 250,
+            className: 'custom-popup'
+        });
+    }
 });
 </script>
 
 <style>
 .custom-marker {
-    font-size: 24px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     cursor: pointer;
+}
+
+.marker-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.marker-dot:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
 }
 
 .custom-popup .leaflet-popup-content-wrapper {
@@ -222,29 +303,16 @@ destinations.forEach(function(dest) {
 
 @media (max-width: 768px) {
     #travel-map {
-        height: 400px;
-        margin: 15px 0;
+        height: 300px;
+        width: 95% !important;
+        margin: 15px auto;
     }
 }
 </style>
 
 ## Travel Stats
 
-- **Countries Visited**: 5
-- **Continents**: 4 (North America, Asia, Europe, Oceania)
-- **Favorite Destination**: Tokyo, Japan 🇯🇵
-- **Next on the List**: Iceland, New Zealand, and more of Europe!
-
-## Travel Tips
-
-Here are some things I've learned from my travels:
-
-- Always carry a portable charger
-- Learn basic phrases in the local language
-- Try the street food (when it's safe!)
-- Take more photos of people, not just places
-- Pack light - you can always buy what you need
-
----
-
-*Want to share your own travel stories? Feel free to reach out!* 
+- **Countries Visited**: 4
+- **Continents**: 2 (North America, Asia)
+- **US States**: 14/50 (Alaska, Arizona, California, Colorado, Florida, Hawaii, Illinois, Indiana, Michigan, Nevada, New York, Utah, Washington, Wyoming)
+- **US National Parks**: 7/63 (Yellowstone, Grand Canyon, Yosemite, Zion, Bryce Canyon, Rocky Mountain, Grand Teton)

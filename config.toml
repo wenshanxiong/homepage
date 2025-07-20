@@ -68,11 +68,6 @@ theme        = "hello-friend-ng"
     url        = "/travel"
 
   [[menu.main]]
-    identifier = "farming"
-    name       = "Farming"
-    url        = "/farming"
-
-  [[menu.main]]
-    identifier = "pets"
-    name       = "Pets"
-    url        = "/pets"
+    identifier = "gardening"
+    name       = "Gardening"
+    url        = "/gardening"
