@@ -18,7 +18,7 @@ Explore the places I've been to around the world. Click on the pins to learn mor
 var map = L.map('travel-map', {
     worldCopyJump: true,
     minZoom: 1
-}).setView([0, 0], 1);
+}).setView([0, 180], 1);
 
 // Add tile layer with world wrapping enabled
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
