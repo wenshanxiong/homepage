@@ -8,7 +8,7 @@ draft: false
 
 Explore the places I've been to around the world. Click on the pins to learn more about each destination.
 
-<div id="travel-map" style="height: 400px; width: 67%; max-width: 600px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></div>
+<div id="travel-map" style="height: 400px; width: 100%; max-width: 600px; margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
