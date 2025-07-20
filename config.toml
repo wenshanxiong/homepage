@@ -24,7 +24,7 @@ theme        = "hello-friend-ng"
   enableSharingButtons = true
   
   # Show a global language switcher in the navigation bar
-  enableGlobalLanguageMenu = true
+  enableGlobalLanguageMenu = false
 
   # Metadata mostly used in document's head
   description = "My new homepage or blog"
