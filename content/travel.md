@@ -201,6 +201,7 @@ var destinations = [
         name: "Champaign, IL, USA",
         lat: 40.1164,
         lng: -88.2434,
+        description: "Praise corn",
     },
     {
         name: "Ann Arbor, Michigan, USA",

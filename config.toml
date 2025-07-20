@@ -1,4 +1,4 @@
-baseurl      = "https://wenshan.dev/"
+baseurl      = "10.0.1.2"
 title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
@@ -38,7 +38,7 @@ theme        = "hello-friend-ng"
 
 [languages]
   [languages.en]
-    title = "Wenshan's homepage"
+    title = "WX's homepage"
     keywords = ""
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
@@ -66,8 +66,16 @@ theme        = "hello-friend-ng"
     identifier = "travel"
     name       = "Travel"
     url        = "/travel"
+    weight     = 10
 
   [[menu.main]]
-    identifier = "gardening"
-    name       = "Gardening"
-    url        = "/gardening"
+    identifier = "garden"
+    name       = "Garden"
+    url        = "/garden"
+    weight     = 20
+  
+  [[menu.main]]
+    identifier = "energy"
+    name       = "Energy"
+    url        = "/energy"
+    weight     = 30
