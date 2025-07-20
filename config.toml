@@ -1,4 +1,4 @@
-baseurl      = "10.0.1.2"
+baseurl      = "wenshan.dev"
 title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
