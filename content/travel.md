@@ -312,7 +312,63 @@ destinations.forEach(function(dest) {
 
 ## Travel Stats
 
-- **Countries Visited**: 4
-- **Continents**: 2 (North America, Asia)
+- **Countries Visited**: 4/193
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 2%;"></div>
+  </div>
+  <span class="progress-text">2% of 193 UN recognized countries</span>
+
+- **Continents**: 2/7 (North America, Asia)
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 28.6%;"></div>
+  </div>
+  <span class="progress-text">28.6% of 7 continents</span>
+
 - **US States**: 14/50 (Alaska, Arizona, California, Colorado, Florida, Hawaii, Illinois, Indiana, Michigan, Nevada, New York, Utah, Washington, Wyoming)
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 28%;"></div>
+  </div>
+  <span class="progress-text">28% complete</span>
+
 - **US National Parks**: 7/63 (Yellowstone, Grand Canyon, Yosemite, Zion, Bryce Canyon, Rocky Mountain, Grand Teton)
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 11.1%;"></div>
+  </div>
+  <span class="progress-text">11.1% complete</span>
+
+<style>
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 8px 0 4px 0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #ff6b6b;
+    border-radius: 4px;
+    transition: width 0.8s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.progress-text {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+    margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+    .progress-container {
+        margin: 6px 0 3px 0;
+    }
+    
+    .progress-text {
+        font-size: 0.8em;
+    }
+}
+</style>
