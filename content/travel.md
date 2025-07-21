@@ -313,29 +313,37 @@ destinations.forEach(function(dest) {
 
 ## Travel Stats
 
-- **Countries Visited**: 4/193
+- **Countries Visited**: 5
   <div class="progress-container">
-    <div class="progress-bar" style="width: 2%;"></div>
+    <div class="progress-bar" style="width: 2.6%;"></div>
   </div>
-  <span class="progress-text">2% of 193 UN recognized countries</span>
+  <span class="progress-text">2.6% of 193 UN recognized countries</span>
 
-- **Continents**: 2/7 (North America, Asia)
+  China, Japan, Philippines, Indonesia, United States
+
+- **Continents**: 2
   <div class="progress-container">
     <div class="progress-bar" style="width: 28.6%;"></div>
   </div>
   <span class="progress-text">28.6% of 7 continents</span>
 
-- **US States**: 14/50 (Alaska, Arizona, California, Colorado, Florida, Hawaii, Illinois, Indiana, Michigan, Nevada, New York, Utah, Washington, Wyoming)
+  Asia, North America
+
+- **US States**: 14
   <div class="progress-container">
     <div class="progress-bar" style="width: 28%;"></div>
   </div>
-  <span class="progress-text">28% complete</span>
+  <span class="progress-text">28% of 50 US states</span>
 
-- **US National Parks**: 7/63 (Yellowstone, Grand Canyon, Yosemite, Zion, Bryce Canyon, Rocky Mountain, Grand Teton)
+  Alaska, Arizona, California, Colorado, Florida, Hawaii, Illinois, Indiana, Michigan, Nevada, New York, Utah, Washington, Wyoming
+
+- **US National Parks**: 7
   <div class="progress-container">
     <div class="progress-bar" style="width: 11.1%;"></div>
   </div>
-  <span class="progress-text">11.1% complete</span>
+  <span class="progress-text">11.1% of 63 US national parks</span>
+  
+  Yellowstone, Grand Canyon, Yosemite, Zion, Bryce Canyon, Rocky Mountain, Grand Teton
 
 <style>
 .progress-container {
